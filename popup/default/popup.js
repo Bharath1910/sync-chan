@@ -6,3 +6,13 @@ chrome.runtime.onMessage.addListener(
         animeName.innerHTML = req.animeName;
     }
 )
+
+const login = document.getElementById("login");
+const logout = document.getElementById("logout");
+
+logout.addEventListener("click", () => {
+    chrome.storage.local.set({
+        'accessToken': undefined,
+        'refreshToken': undefined
+    })
+})
